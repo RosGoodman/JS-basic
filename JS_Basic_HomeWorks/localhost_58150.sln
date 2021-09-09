@@ -8,20 +8,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HelloWorld", "http://localh
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_58150"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Documents\My Web Sites\HelloWorld\"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\..\Documents\My Web Sites\HelloWorld\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58150\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_58150"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Documents\My Web Sites\HelloWorld\"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\..\Documents\My Web Sites\HelloWorld\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58150\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\..\..\..\Documents\My Web Sites\HelloWorld\"
+		SlnRelativePath = "..\..\..\..\..\..\..\Documents\My Web Sites\HelloWorld\"
 	EndProjectSection
 EndProject
 Global
