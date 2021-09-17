@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title></title>
+</head>
+
+<body>
+   <script>
+      "use strict";
+
+      let numb1 = getRandom();
+      let numb2 = getRandom();
+
+      let opSum = function sum(numb1, numb2) {
+         return (numb1 + numb2);
+      }
+
+      let opSubtract = function subtract(numb1, numb2) {
+         return (numb1 - numb2);
+      }
+
+      let opDivide = function divide(numb1, numb2) {
+         return (numb1 / numb2);
+      }
+
+      let opMultiply = function multiply(numb1, numb2) {
+         return (numb1 * numb2);
+      }
+
+      mathOperation(numb1, numb2, opSum);
+      mathOperation(numb1, numb2, opSubtract);
+      mathOperation(numb1, numb2, opDivide);
+      mathOperation(numb1, numb2, opMultiply);
+
+      function mathOperation(numb1, numb2, operation) {
+         console.log(operation(numb1, numb2));
+      }
+
+      /**
+       * Функция возвращает случайное число от -100 до 100.
+       * @returns {number} случайное значение.
+       * */
+      function getRandom() {
+         return Math.round(Math.random() * (100 + 101)) - 100;
+      }
+   </script>
+</body>
+
+</html>
