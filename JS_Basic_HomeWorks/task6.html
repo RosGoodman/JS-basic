@@ -16,13 +16,13 @@
        * Стартовая функция.
        * */
       function start() {
-         let sum = parseFloat(prompt());
+         const sum = parseFloat(prompt());
 
          if (checkForErrors(sum)) { return; }
 
-         let remains = getRemains10(sum);
-         let remains2 = getRemains100(sum);
-         let ending = getEnding(remains, remains2);
+         const remains = getRemains10(sum);
+         const remains2 = getRemains100(sum);
+         const ending = getEnding(remains, remains2);
 
          printMsg(sum, ending);
       }

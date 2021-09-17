@@ -10,8 +10,8 @@
    <script>
       "use strict";
 
-      let numb1 = getRandom();
-      let numb2 = getRandom();
+      const numb1 = getRandom();
+      const numb2 = getRandom();
       alert(checkConditions(numb1, numb2));
 
       /**
@@ -21,8 +21,8 @@
        * @returns {number} Результат вычислений.
        * */
       function checkConditions(numb1, numb2) {
-         let check1 = numb1 > -1;
-         let check2 = numb2 > -1;
+         const check1 = numb1 > -1;
+         const check2 = numb2 > -1;
 
          //разные знаки.
          if (check1 ^ check2) {
