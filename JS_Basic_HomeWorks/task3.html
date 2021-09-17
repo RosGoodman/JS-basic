@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title></title>
+</head>
+
+<body>
+   <script>
+      "use strict";
+
+      let numb1 = getRandom();
+      let numb2 = getRandom();
+      alert(checkConditions(numb1, numb2));
+
+      /**
+       * Функция проверяет заданные условия.
+       * @param {number} numb1 - число 1.
+       * @param {number} numb2 - число 2.
+       * @returns {number} Результат вычислений.
+       * */
+      function checkConditions(numb1, numb2) {
+         let check1 = numb1 > -1;
+         let check2 = numb2 > -1;
+
+         //разные знаки.
+         if (check1 ^ check2) {
+            return (numb1 + numb2);
+         }
+
+         //оба положительные или оба отрицательные.
+         switch (check1 && check2) {
+            case true:
+               return (numb1 - numb2);
+            case false:
+               return (numb1 * numb2);
+         }
+      }
+
+      /**
+       * Функция возвращает случайное число от -10000 до 10000.
+       * @returns {number} случайное значение.
+       * */
+      function getRandom() {
+         return Math.round(Math.random() * (10000 + 10001)) - 10000;
+      }
+   </script>
+</body>
+
+</html>
