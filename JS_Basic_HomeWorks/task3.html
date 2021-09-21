@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title></title>
+</head>
+
+<body>
+   <script>
+      "use strict";
+
+      const products = [
+         {
+            id: 3,
+            price: 200
+         },
+         {
+            id: 4,
+            price: 900
+         },
+         {
+            id: 1,
+            price: 1000
+         },
+      ];
+      const discPercent = 15;
+
+      recalculatePrices(products, discPercent);
+      printPrice(products);
+
+      /**
+       * Функция пересчитывает цену продуктов с учетом указанной скидки
+       * @param {Array} products, массив с ценами на продукты.
+       * @param {number} discPercent, процент скидки.
+       **/
+      function recalculatePrices(products, discPercent) {
+         products.forEach(product => {
+            product.price = product.price - (product.price / 100) * discPercent;
+         });
+      }
+
+      /**
+       * Функция выводит данные id - price по каждому продукту.
+       * @param {Array} products, массив с ценами на продукты.
+       **/
+      function printPrice(products) {
+         products.forEach(product => {
+            console.log(`Цена для продукта №${product.id} с учетом скидки будет равна: ${product.price}`);
+         })
+      }
+
+   </script>
+</body>
+
+</html>

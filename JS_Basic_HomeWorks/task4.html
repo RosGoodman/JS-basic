@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title></title>
+</head>
+
+<body>
+   <script>
+      "use strict";
+
+      const products = [
+         {
+            id: 3,
+            price: 127,
+            photos: [
+               "1.jpg",
+               "2.jpg"
+            ]
+         },
+         {
+            id: 5,
+            price: 499,
+            photos: []
+         },
+         {
+            id: 10,
+            price: 26,
+            photos: [
+               "3.jpg"
+            ]
+         },
+         {
+            id: 8,
+            price: 78,
+         },
+      ];
+
+      let prodWithPhoto = getProductsWithPhotosProp(products);
+      printProd(prodWithPhoto);
+
+      products.sort(function (a, b) {
+         if (a.price > b.price) return 1;
+         if (a.price < b.price) return -1;
+         return 0;
+      })
+
+      printProd(products);
+
+      /**
+       * Функция выводит в консоль данные из массива товаров.
+       * @param {Array} products, массив с данными по продуктам.
+       * */
+      function printProd(products) {
+         products.forEach(product => {
+            let string = (product.id + " " + product.price);
+
+            //если есть св-во "photos", то добавляем в печать.
+            if (product.hasOwnProperty('photos'))
+               string += (" " + product.photos.length);
+
+            console.log(string);
+         });
+      }
+
+      /**
+       * Функция сортирует массив по наличию свойства "photos" и наличию в этом св-ве данных.
+       * @param {Array} products, массив с данными по продуктам.
+       * @returns {Array} отсортированный массив.
+       * */
+      function getProductsWithPhotosProp(products) {
+         return products.filter(product =>
+            product.hasOwnProperty('photos') && product.photos.length > 0
+         );
+      }
+
+   </script>
+</body>
+
+</html>
