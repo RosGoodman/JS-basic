@@ -10,41 +10,46 @@
    <script>
       "use strict";
 
-      const numb1 = getRandom();
-      const numb2 = getRandom();
-      alert(checkConditions(numb1, numb2));
+      const products = [
+         {
+            id: 3,
+            price: 200
+         },
+         {
+            id: 4,
+            price: 900
+         },
+         {
+            id: 1,
+            price: 1000
+         },
+      ];
+      const discPercent = 15;
+
+      recalculatePrices(products, discPercent);
+      printPrice(products);
 
       /**
-       * Функция проверяет заданные условия.
-       * @param {number} numb1 - число 1.
-       * @param {number} numb2 - число 2.
-       * @returns {number} Результат вычислений.
-       * */
-      function checkConditions(numb1, numb2) {
-         const check1 = numb1 > -1;
-         const check2 = numb2 > -1;
-
-         //разные знаки.
-         if (check1 ^ check2) {
-            return (numb1 + numb2);
-         }
-
-         //оба положительные или оба отрицательные.
-         switch (check1 && check2) {
-            case true:
-               return (numb1 - numb2);
-            case false:
-               return (numb1 * numb2);
-         }
+       * Функция пересчитывает цену продуктов с учетом указанной скидки
+       * @param {Array} products, массив с ценами на продукты.
+       * @param {number} discPercent, процент скидки.
+       **/
+      function recalculatePrices(products, discPercent) {
+         products.forEach(product => {
+            product.price = product.price - (product.price / 100) * discPercent;
+         });
       }
 
       /**
-       * Функция возвращает случайное число от -10000 до 10000.
-       * @returns {number} случайное значение.
-       * */
-      function getRandom() {
-         return Math.round(Math.random() * (10000 + 10001)) - 10000;
+       * Функция выводит данные id - price по каждому продукту.
+       * @param {Array} products, массив с ценами на продукты.
+       **/
+      function printPrice(products) {
+         products.forEach(product => {
+            console.log(`Цена для продукта №${product.id} с учетом скидки будет равна: ${product.price}`);
+         })
       }
+
    </script>
 </body>
 

@@ -10,82 +10,10 @@
    <script>
       "use strict";
 
-      start();
+      let string = "";
 
-      /**
-       * Стартовая функция.
-       * */
-      function start() {
-         const sum = parseFloat(prompt());
-
-         if (checkForErrors(sum)) { return; }
-
-         const remains = getRemains10(sum);
-         const remains2 = getRemains100(sum);
-         const ending = getEnding(remains, remains2);
-
-         printMsg(sum, ending);
-      }
-
-      /**
-       * Функция проверяет на ошибки.
-       * @param {any} sum проверяемое значение.
-       * @returns {boolean} true, если ошибка.
-       * */
-      function checkForErrors(sum) {
-         if (Number.isNaN(sum)) {
-            alert("Неверное значение.")
-            return true;
-         }
-         if (sum < 0) {
-            alert("Невозможно зачислить отрицательное значение.")
-            return true;
-         }
-      }
-
-      /**
-       * Функция выводит результат работы программы.
-       * @param {number} sum зачисенная сумма.
-       * @param {string} ending окончание наименования зачисляемой валюты.
-       * */
-      function printMsg(sum, ending) {
-         alert(`Ваша сумма в ${sum} руб${ending} успешно зачислена.`)
-      }
-
-      /**
-       * Функция находит окончание для наименования валюты по указанным остаткам.
-       * @param {number} remains остаток от деления на 10.
-       * @param {number} remains2 остаток от деления на 100.
-       * @returns {string} полученное окончание.
-       * */
-      function getEnding(remains, remains2) {
-         if (remains2 >= 5 && remains2 < 21) {
-            return "лей";
-         } else if (remains >= 5 && remains < 11) {
-            return "лей";
-         } else if (remains == 0) {
-            return "лей";
-         } else if (remains >= 2 && remains < 5) {
-            return "ля";
-         } else return "ль";
-      }
-
-      /**
-       * Функция находит остаток при делении на 10.
-       * @param {number} sum зачисляемая сумма.
-       * @returns {number} остаток.
-       * */
-      function getRemains10(sum) {
-         return sum % 10;
-      }
-
-      /**
-       * Функция находит остаток при делении на 100.
-       * @param {number} sum зачисляемая сумма.
-       * @returns {number} остаток.
-       * */
-      function getRemains100(sum) {
-         return sum % 100;
+      for (let i = 1; i < 21; i++) {
+         console.log(string += "X");
       }
 
    </script>

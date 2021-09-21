@@ -10,41 +10,8 @@
    <script>
       "use strict";
 
-      const numb1 = getRandom();
-      const numb2 = getRandom();
+      for (let i = 0; i < 10; console.log(i++)) { }
 
-      const opSum = function sum(numb1, numb2) {
-         return (numb1 + numb2);
-      }
-
-      const opSubtract = function subtract(numb1, numb2) {
-         return (numb1 - numb2);
-      }
-
-      const opDivide = function divide(numb1, numb2) {
-         return (numb1 / numb2);
-      }
-
-      const opMultiply = function multiply(numb1, numb2) {
-         return (numb1 * numb2);
-      }
-
-      mathOperation(numb1, numb2, opSum);
-      mathOperation(numb1, numb2, opSubtract);
-      mathOperation(numb1, numb2, opDivide);
-      mathOperation(numb1, numb2, opMultiply);
-
-      function mathOperation(numb1, numb2, operation) {
-         console.log(operation(numb1, numb2));
-      }
-
-      /**
-       * Функция возвращает случайное число от -100 до 100.
-       * @returns {number} случайное значение.
-       * */
-      function getRandom() {
-         return Math.round(Math.random() * (100 + 101)) - 100;
-      }
    </script>
 </body>
 
