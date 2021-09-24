@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        //es5
+
+        /**
+         * Функция-конструктор объекта product.
+         * @param {string} name, наименование продукта.
+         * @param {number} paice, стоимость продукта.
+         * */
+        function product(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+
+        /**
+         * Функция изменяет у объекта зачение свойства price.
+         * */
+        function make25PercentDiscount() {
+            this.price *= 0.75;
+        }
+
+        let prod = new product("яблоки", 100);
+        console.log(prod);
+        make25PercentDiscount.call(prod);
+        console.log(prod);
+
+    </script>
+    <script>
+        "use strict";
+
+        //es6
+
+        /** Класс описывающий объект продукт.**/
+        class Product {
+            name = "";
+            price = 0;
+
+            /**
+             * @param {string} name, наименование продукта.
+             * @param {number} price, стоимость продукта.
+             * */
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+
+            /** Функция уменьшает свойство price на 25%. **/
+            make25PercentDiscount() {
+                this.price *= 0.75;
+            }
+        }
+
+        let newProd = new Product("Груши", 50);
+        console.log(newProd);
+        newProd.make25PercentDiscount();
+        console.log(newProd);
+
+    </script>
+</body>
+
+</html>
