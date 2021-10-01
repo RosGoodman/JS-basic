@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
     <style>
         i {
             font-size: 50px;
         }
+
         .golden {
             color: gold;
         }
     </style>
 </head>
+
 <body>
     <i id="first" class="fas fa-star"></i>
     <i id="second" class="fas fa-star"></i>
@@ -31,23 +36,52 @@
     -->
 
     <script>
-        let firstStar = document.getElementById('first');
-        let secondStar = document.getElementById('second');
-        let thirdStar = document.getElementById('third');
-        let fourthStar = document.getElementById('fourth');
-        let fifthStar = document.getElementById('fifth');
+        "use strict"
 
         let goldenClass = 'golden';
+        const bodyEl = document.querySelector('body');
 
-        firstStar.addEventListener('mouseover', function() {
-            if (!firstStar.classList.contains('goldenClass')) {
-                firstStar.classList.add(goldenClass);
+        /**
+         * Mouseover обработка события наведения курсора.
+         *@type {HTMLElement} - цель события.
+         *@listens document#mouseover - the namespace and name of the event.
+         **/
+        bodyEl.addEventListener('mouseover', (event) => {
+            let currentEl = document.getElementById(event.target.id);
+            AddOrRemoveGoldenClass(currentEl);
+        })
+
+        /**
+         * Mouseout обработка события наведения курсора.
+         *@type {HTMLElement} - цель события.
+         *@listens document#mouseout - the namespace and name of the event.
+         **/
+        bodyEl.addEventListener('mouseout', (event) => {
+            let currentEl = document.getElementById(event.target.id);
+            AddOrRemoveGoldenClass(currentEl);
+        });
+
+        /**
+         * Функция перебирает элементы и добавляет или убирает класс "golden".
+         * @param {HTMLElement} currentEl, Елемент, с которого начинается перебор.
+         * */
+        function AddOrRemoveGoldenClass(currentEl) {
+            while (currentEl != null) {
+                //проверка, что элемент подходит (просто на всякий случай)
+                if (!currentEl.classList.contains("fa-star")) {
+                    currentEl = currentEl.previousElementSibling;
+                    continue;
+                }
+
+                if (!currentEl.classList.contains('goldenClass')) {
+                    currentEl.classList.toggle(goldenClass);
+                    currentEl = currentEl.previousElementSibling;
+                }
             }
-        });
+        }
 
-        firstStar.addEventListener('mouseout', function() {
-            firstStar.classList.remove(goldenClass);
-        });
+
     </script>
 </body>
+
 </html>

@@ -44,10 +44,25 @@
     -->
 
     <script>
+        "use strict"
 
-        function closeClickHandler(event) {
-           
-        }
+        const btns = document.querySelectorAll('button');
+
+        const closeClickHandler = event => {
+            let parentEl = event.target.parentElement;
+
+            //в button лежит span, для этого проверка полученного родителя.
+            if (parentEl.localName == "button") {
+                parentEl = parentEl.parentElement;
+            }
+
+            parentEl.style.display = 'none';
+        };
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', closeClickHandler);
+        });
+
     </script>
 </body>
 

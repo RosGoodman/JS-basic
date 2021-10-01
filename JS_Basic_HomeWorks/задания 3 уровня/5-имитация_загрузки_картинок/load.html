@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="products">
         <div class="product">
@@ -41,7 +43,21 @@
     -->
 
     <script>
-        
+        "use strict"
+
+        let imgs = document.querySelectorAll('img');
+        const newSrc = "images/";
+        const delay = 3000;
+
+        const changeIMG = () => {
+            for (let i = 0; i < imgs.length; i++) {
+                let str = `${newSrc}${i + 1}.jpg`;
+                imgs[i].setAttribute('src', `${newSrc}${i + 1}.jpg`);
+            }
+        }
+
+        setTimeout(changeIMG, delay);
     </script>
 </body>
+
 </html>
