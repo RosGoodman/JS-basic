@@ -709,3 +709,48 @@ body {
         margin-top: 40px;
     }
 }
+
+.rightHeader {
+    position: relative;
+}
+
+.cart {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 37px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+@media (min-width: 340px) {
+    .cart {
+        font-size: 16px;
+    }
+}
+@media (min-width: 552px) {
+    .cart {
+        width: 500px;
+    }
+}
+
+.cartHeader {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 10px;
+}
+
+.cartHeader {
+    font-weight: bold;
+}
+
+.cartTotal {
+    font-weight: bold;
+    text-align: right;
+}

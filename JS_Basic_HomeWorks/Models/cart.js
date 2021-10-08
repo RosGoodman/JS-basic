@@ -1,6 +1,6 @@
 "use strict"
 
-/*class Cart {
+class Cart {
    prodList = [];
 
    constructor() { }
@@ -16,4 +16,4 @@
          }
       }
    }
-}*/
+}

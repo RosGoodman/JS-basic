@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,6 +27,20 @@
                     <img class="cartIcon" src="images/cart.png" alt="">
                     <span>5</span>
                 </span>
+
+                <div class="cart">
+                    <div class="cartHeader">
+                        <div>ProdName</div>
+                        <div>Count</div>
+                        <div>Price</div>
+                        <div>FullPrice</div>
+                    </div>
+
+                    <div class="cartTotal">
+                        Total price:
+                        $<span class="cartTotalValue">0</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -399,12 +415,19 @@
                 </a>
             </div>
             <div class="footerRight">
-                &copy; 2021  Brand  All Rights Reserved.
+                &copy; 2021 Brand All Rights Reserved.
             </div>
         </div>
     </div>
 
     <script src="app.js"></script>
+    <script src="Models/product.js"></script>
+    <script src="Models/cart.js"></script>
+    <script>
+        let cart = new Cart();
+        let productList = new Products();
+    </script>
+    <script src="Handlers/cartHandlers.js"></script>
 </body>
 
 </html>
