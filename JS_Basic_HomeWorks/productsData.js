@@ -1,4 +1,6 @@
-const products = [
+"use strict"
+
+const productsData = [
    {
       name: "ELLERY X M'O CAPSULE",
       text: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
@@ -38,9 +40,11 @@ const products = [
 ];
 
 //загрузка в модель
+//вернуть список
 function loadingProducts() {
+   let prodList = [];
 
-   products.forEach(item => {
+   productsData.forEach(item => {
       let prod = new Product();
 
       prod.name = item.name;
@@ -48,20 +52,19 @@ function loadingProducts() {
       prod.price = item.price;
       prod.img = item.img;
 
-      productList.addProducts(prod);
+      prodList.push(prod);
    });
+   return prodList;
 }
 
 //создание элементов на странице
-function createdProdElements(prodList) {
+function createdProdElements(productsObj) {
    let featuredItemEls = document.querySelectorAll('.featuredItem');
    const prodItem = document.createElement('div');
 
    //перебор эл, а не мессива продуктов т.к. прод-в может быть больше, чем места на странице
    for (let i = 0; i < featuredItemEls.length; i++) {
-      let pr = new Product();
-      let pr = prodList[i];
-      featuredItemEls[i].insertAdjacentHTML('afterbegin', getProductMurkup(prodList[i]));
+      featuredItemEls[i].insertAdjacentHTML('afterbegin', getProductMurkup(productsObj.prodList[i]));
    }
 }
 

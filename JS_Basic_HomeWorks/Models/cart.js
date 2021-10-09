@@ -16,4 +16,12 @@ class Cart {
          }
       }
    }
+
+   hideCart() {
+
+   }
+
+   showCart() {
+
+   }
 }

@@ -18,6 +18,7 @@ class Products {
    constructor() { }
 
    addProducts(product) {
-      this.prodList.push(product);
+      this.prodList = this.prodList.concat(product);
+      this.prodList = this.prodList.concat(product);
    }
 }
