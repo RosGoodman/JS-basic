@@ -155,7 +155,7 @@
 
             <div class="featuredItem">
 
-                <div class="featuredImgWrap">
+                <!--<div class="featuredImgWrap">
                     <img src="images/featured/1.jpg" alt="">
                     <div class="featuredImgDark">
                         <button>
@@ -177,13 +177,13 @@
                     <div class="featuredPrice">
                         $52.00
                     </div>
-                </div>
+                </div>-->
 
             </div>
 
             <div class="featuredItem">
 
-                <div class="featuredImgWrap">
+                <!--<div class="featuredImgWrap">
                     <img src="images/featured/2.jpg" alt="">
                     <div class="featuredImgDark">
                         <button>
@@ -205,13 +205,13 @@
                     <div class="featuredPrice">
                         $52.00
                     </div>
-                </div>
+                </div>-->
 
             </div>
 
             <div class="featuredItem">
 
-                <div class="featuredImgWrap">
+                <!--<div class="featuredImgWrap">
                     <img src="images/featured/3.jpg" alt="">
                     <div class="featuredImgDark">
                         <button>
@@ -233,13 +233,13 @@
                     <div class="featuredPrice">
                         $52.00
                     </div>
-                </div>
+                </div>-->
 
             </div>
 
             <div class="featuredItem">
 
-                <div class="featuredImgWrap">
+                <!--<div class="featuredImgWrap">
                     <img src="images/featured/4.jpg" alt="">
                     <div class="featuredImgDark">
                         <button>
@@ -261,13 +261,13 @@
                     <div class="featuredPrice">
                         $52.00
                     </div>
-                </div>
+                </div>-->
 
             </div>
 
             <div class="featuredItem">
 
-                <div class="featuredImgWrap">
+                <!--<div class="featuredImgWrap">
                     <img src="images/featured/5.jpg" alt="">
                     <div class="featuredImgDark">
                         <button>
@@ -289,12 +289,12 @@
                     <div class="featuredPrice">
                         $52.00
                     </div>
-                </div>
+                </div>-->
 
             </div>
             <div class="featuredItem">
 
-                <div class="featuredImgWrap">
+                <!--<div class="featuredImgWrap">
                     <img src="images/featured/6.jpg" alt="">
                     <div class="featuredImgDark">
                         <button>
@@ -316,7 +316,7 @@
                     <div class="featuredPrice">
                         $52.00
                     </div>
-                </div>
+                </div>-->
 
             </div>
         </div>
@@ -423,11 +423,18 @@
     <script src="app.js"></script>
     <script src="Models/product.js"></script>
     <script src="Models/cart.js"></script>
+    <script src="productsData.js"></script>
     <script>
+        "use strict"
         let cart = new Cart();
         let productList = new Products();
     </script>
     <script src="Handlers/cartHandlers.js"></script>
+    <script>
+        "use strict"
+        loadingProducts();
+        createdProdElements(productList);
+    </script>
 </body>
 
 </html>
