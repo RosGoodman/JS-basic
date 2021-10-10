@@ -1,9 +1,12 @@
 "use strict"
 
-let featuredItemsEl = document.querySelector('.featuredItems');
+let cartIconEl = document.querySelector('.cartIconWrap');
+let cartEl = document.querySelector('.cart');
 
-featuredItemsEl.addEventListener('click', (e) => {
-   if (e.target.localName == 'button') {
-      let c = e.target.pa
+cartIconEl.addEventListener('click', (e) => {
+   if (cartEl.style.display == 'block') {
+      cartEl.style.display = 'none';
+   } else {
+      cartEl.style.display = 'block';
    }
 });

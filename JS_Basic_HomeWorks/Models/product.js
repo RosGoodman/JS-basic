@@ -2,11 +2,13 @@
 
 class Product {
 
+   article = "";
    prodName = "";
    featuredText = "";
    prodPrice = 0;
 
-   constructor(name, text, price) {
+   constructor(article, name, text, price) {
+      this.article = article;
       this.prodName = name;
       this.featuredText = text;
       this.prodPrice = price;
