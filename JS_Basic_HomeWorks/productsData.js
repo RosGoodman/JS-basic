@@ -76,12 +76,13 @@ function createdProdElements(productsObj) {
    }
 }
 
+//запись данных и доп.атрибута на кнопку(article для быстрого поиска в списке продуктов)
 function getProductMurkup(product) {
    return `
    <div class="featuredImgWrap">
       <img src=${product.img} alt="">
       <div class="featuredImgDark">
-         <button>
+         <button article=${product.article}>
             <img src="images/cart.svg" alt="">
             Add to Cart
          </button>

@@ -23,4 +23,13 @@ class Products {
       this.prodList = this.prodList.concat(product);
       this.prodList = this.prodList.concat(product);
    }
+
+   //получить продукт по артикулу
+   getProductByArticle(article) {
+      for (let i = 0; i < this.prodList.length; i++) {
+         if (article == this.prodList[i].article) {
+            return this.prodList[i];
+         }
+      }
+   }
 }
