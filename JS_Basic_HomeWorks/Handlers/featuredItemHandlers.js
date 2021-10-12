@@ -3,7 +3,7 @@
 let divCartEl = document.querySelector('.cart');
 let featuredItemsEl = document.querySelector('.featuredItems');
 
-//обработка клика по товару (add)
+/** Обработка клика по товару (add). */
 featuredItemsEl.addEventListener('click', function (e) {
 
     if (e.target.localName == 'button') {
@@ -18,7 +18,7 @@ featuredItemsEl.addEventListener('click', function (e) {
     }
 });
 
-//обработка клика по иконке удаления из корзины
+/** Обработка клика по иконке удаления из корзины */
 divCartEl.addEventListener('click', (e) => {
     if (e.target.localName == 'img') {
         let article = e.target.getAttribute('article');
@@ -29,19 +29,20 @@ divCartEl.addEventListener('click', (e) => {
     }
 });
 
-//обновить отображение корзины
+/** Обновить отображение корзины. */
 function refreshCart() {
     //если есть удаляем старые элементы
     let oldCartProductsEls = document.querySelectorAll('.cartProduct');
     oldCartProductsEls.forEach(prodEl => {
         prodEl.remove();
     });
-    //добавление в html
+
     let cartEl = document.querySelector('.cartHeader');
 
     //цикл с конца т.к. элементы будут вставляться в одно и тоже место
     for (let i = cart.prodInCartList.length - 1; i >= 0; i--) {
-        cartEl.insertAdjacentHTML('afterend', getCartProductMurkup(cart.prodInCartList[i]));
+        //добавление в html
+        cartEl.insertAdjacentHTML('afterend', getCartProductMurkup(cart.prodInCartList[i][0], cart.prodInCartList[i][1]));
     }
 
     //полная сумма заказа
@@ -53,7 +54,10 @@ function refreshCart() {
     cartCount.textContent = cart.prodInCartList.length;
 }
 
-//получить полную сумму заказа
+/**
+ * Получить полную сумму заказа.
+ * @returns {number} Полная сумма заказа.
+ */
 function getTotalPrice() {
     let sum = 0;
     for (let i = 0; i < cart.prodInCartList.length; i++) {
@@ -64,7 +68,13 @@ function getTotalPrice() {
     return sum;
 }
 
-function getCartProductMurkup(productAndCount) {
+/**
+ * Получить html-стоку для указанного элемента.
+ * @param {Product} product экземпляр класса Product.
+ * @param {number} count кол-во шт. указанного товара.
+ * @returns {string} html-строка элемента.
+ */
+function getCartProductMurkup(product, count) {
     let prod = productAndCount[0];
     let count = productAndCount[1];
 
