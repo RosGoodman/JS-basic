@@ -8,30 +8,36 @@ class Cart {
 
    //добавить 1 продукт в корзину, если уже есть - увеличить кол-во
    addProduct(product) {
+
+      if (this.prodInCartList.length == 0) {
+         this.prodInCartList.push([product, 1]);
+         return;
+      }
+
       for (let i = 0; i < this.prodInCartList.length; i++) {
          if (this.prodInCartList[i][0] == product) {
             this.prodInCartList[i][1]++;
             //увеличится ли кол-во?
             return;
          }
-         //если конец массива - add prod
-         this.prodInCartList = this.prodInCartList.concat([product, 1]);
-         console.log(this.prodInCartList);
-         return;
+         if (i == this.prodInCartList.length) {
+            let n = [product, 1];
+            this.prodInCartList.push([product, 1]);
+         }
       }
-      if (this.prodInCartList.length == 0) {
-         this.prodInCartList = this.prodInCartList.concat([product, 1]);
-      }
-      console.log(this.prodInCartList);
    }
 
    //удалить полностью продукт из корзины
    removeProduct(product) {
-      this.prodInCartList.forEach(prod => {
-         if (prod[0] == prod) {
-            //в корзине не может быть одинаковых значений - slice подходит
-            this.prodInCartList.slice(prod, 1);
+      for (let i = 0; i < this.prodInCartList.length; i++) {
+         //многомерный массив, по этому prod[0]. Сравниваем только product
+         if (prod[0] == product) {
+            this.prodInCartList = this.prodInCartList.splice(i, 1);
+            return;
          }
-      });
+         if (i == this.prodInCartList.length) {
+            console.log("Element not found.");
+         }
+      };
    }
 }
