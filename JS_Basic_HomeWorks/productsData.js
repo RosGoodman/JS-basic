@@ -35,13 +35,6 @@ const productsData = [
       text: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
       price: 29.00,
       img: "images/featured/5.jpg"
-   },
-   {
-      article: 11116,
-      name: "Product 5",
-      text: "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
-      price: 39.00,
-      img: "images/featured/6.jpg"
    }
 ];
 

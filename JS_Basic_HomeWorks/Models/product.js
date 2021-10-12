@@ -35,7 +35,6 @@ class Products {
     */
    addProducts(product) {
       this.prodList = this.prodList.concat(product);
-      this.prodList = this.prodList.concat(product);
    }
 
    /**
