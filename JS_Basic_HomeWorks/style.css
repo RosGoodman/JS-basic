@@ -740,9 +740,17 @@ body {
 
 .cartHeader {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: [full-start] 3fr [content-start] 1fr 1fr 1fr [content-end] 1fr [full-end];
     gap: 10px;
     margin-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 10px;
+}
+
+.cartProduct{
+    display: grid;
+    grid-template-columns: [full-start] 3fr [content-start] 1fr 1fr 1.25fr [content-end] 0.5fr [full-end];
+    gap: 10px;
     border-bottom: 1px solid #ebebeb;
     padding-bottom: 10px;
 }
