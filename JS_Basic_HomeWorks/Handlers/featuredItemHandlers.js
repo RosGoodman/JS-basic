@@ -70,14 +70,11 @@ function getTotalPrice() {
 
 /**
  * Получить html-стоку для указанного элемента.
- * @param {Product} product экземпляр класса Product.
+ * @param {Product} prod экземпляр класса Product.
  * @param {number} count кол-во шт. указанного товара.
  * @returns {string} html-строка элемента.
  */
-function getCartProductMurkup(product, count) {
-    let prod = productAndCount[0];
-    let count = productAndCount[1];
-
+function getCartProductMurkup(prod, count) {
     return `
     <div class="cartProduct">
         <div>${prod.name}</div>

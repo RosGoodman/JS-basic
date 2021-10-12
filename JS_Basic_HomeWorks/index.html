@@ -292,28 +292,22 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <!--
+        Показалось странным хранение данных о товаре в коде страницы,
+        по этому добавил productData, где "получаю" данные (очень условно).
+    -->
 
     <!--подключение моделей-->
     <script src="Models/product.js"></script>
     <script src="Models/cart.js"></script>
-    <script>
-        "use strict"
-        let cart = new Cart();
-        let productsObj = new Products();   //убрать из свободного доступа
-    </script>
+    <!--данные о товарах-->
+    <script src="productsData.js"></script>
+
+    <script src="app.js"></script>
 
     <!--подпись на события-->
     <script src="Handlers/cartHandlers.js"></script>
     <script src="Handlers/featuredItemHandlers.js"></script>
-
-    <!--загрузка данных-->
-    <script src="productsData.js"></script>
-    <script>
-        "use strict"
-        productsObj.addProducts(loadingProducts());
-        createdProdElements(productsObj);
-    </script>
 </body>
 
 </html>

@@ -1,5 +1,12 @@
 'use strict';
 
+let cart = new Cart();
+let productsObj = new Products();
+
+//загрузка данных
+productsObj.addProducts(loadingProducts());
+createdProdElements(productsObj);
+
 let fitlerPopup = document.querySelector('.filterPopup');
 let fitlerLabel = document.querySelector('.filterLabel');
 let filterIcon = document.querySelector('.filterIcon');
